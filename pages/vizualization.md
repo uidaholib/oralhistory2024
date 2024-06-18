@@ -1,7 +1,7 @@
 ---
 title: Color-coded Subject Visualization
 layout: visualization
-permalink: /ohdviz.html
+permalink: /viz.html
 ---
 
 ## Color-coded Subject Visualization
