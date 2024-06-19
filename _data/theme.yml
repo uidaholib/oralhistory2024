@@ -6,6 +6,11 @@
 ##########
 # HOME PAGE
 #
+# The optional vizualization on the home page is a composite of the transcripts color-coded representation 
+# To turn it off, either don't include a filters.
+home-page-visualization: https://ctrl-shift.org/images/gluck.jpg
+# This will determine the height of the visualization on the home page
+home-page-visualization-size: 30%
 # featured image is used in home page banner and in meta markup to represent the collection
 # use either an objectid (from an item in this collect), a relative location of an image in this repo, or a full url to an image elsewhere
 featured-image: gluck
