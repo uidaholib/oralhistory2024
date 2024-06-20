@@ -15,7 +15,7 @@
      {% assign my_integer = forloop.length %}
      {% assign my_float = my_integer | times: 1.0 %}
      {% assign rect-width = 100 | divided_by: my_float  %}
-       <rect x="{{forloop.index0 | times: rect-width }}%" y="0" width="{{rect-width}}%" height="100%" data-toggle="tooltip" data-placement="top" class="{{item.tags | downcase | replace: ';', ' '}}" title=" {% if item.tags %}(Subjects: {{ item.tags | replace: ';', ', ' }}){%endif%}"></rect>
+       <rect x="{{forloop.index0 | times: rect-width }}%" y="0" width="{{rect-width}}%" height="100%" data-bs-toggle="tooltip" data-bs-placement="top" class="{{item.tags | downcase | replace: ';', ' '}}" title=" {% if item.tags %}(Subjects: {{ item.tags | replace: ';', ', ' }}){%endif%}"></rect>
      {%endfor%}</svg></a>
  </div>{%endfor%}
  </div>
