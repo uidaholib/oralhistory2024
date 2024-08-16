@@ -21,7 +21,7 @@
   <div id="filters-content" class="pe-md-5">
     <div class="row my-3 sticky-top bg-white border-bottom border-left border-right d-print-none py-3 w-md-75" id="filters-search" style="z-index: 0;">
       <div class="col {% unless site.data.filters %}d-none{% endunless %}">
-        <select id="filters" title="Filter by Topic" aria-label="Topic filtering dropdown select option" class="filters p-2 form-select border border-primary" onchange="filterLines(this.value)">
+        <select id="filters" title="Filter by Topic" aria-label="Topic filtering dropdown select option" class="filters py-1 form-select border border-primary" onchange="filterLines(this.value)">
           <option value="all" class="reset" selected="selected reset">Filter by Topic</option>
           {% assign filters = site.data.filters %}
           {% for filter in filters %}
@@ -35,18 +35,18 @@
         <div id="transcriptsearch" class="bg-lightr">
           <div class="row">
             <div class="col-md-6">
-              <div class="input-group fs-5 mt-2 mt-md-0">
-                <input type="text" class="form-control border border-primary" placeholder="Search..." aria-label="Search"
+              <div class="input-group fs-5 mt-0 mt-md-0">
+                <input type="text" class="form-control border border-primary py-1" placeholder="Search..." aria-label="Search"
                   aria-describedby="goButton" id="quicksearch">
                 <div class="input-group-append">
-                  <button class=" rounded-right border border-primary btn btn-primary" type="submit"
+                  <button class=" rounded-right border border-primary btn btn-primary p-1" type="submit"
                     title="Search" alt="Search" id="goButton"
                     onclick="var searchval = document.getElementById('quicksearch').value; searchLines(searchval);">Go</button>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
-              <button class="reset btn btn-sm btn-primary input-group-text" onclick="vizFilter('all');">Reset
+              <button class="reset btn btn-sm btn-primary input-group-text float-end float-md-none mt-2 mt-md-0" onclick="vizFilter('all');">Reset
                 Filters</button>
             </div>
           </div>
@@ -59,8 +59,89 @@
 
         </select>
       </div>
+      <div id="filter-tab" class="d-none filter-tab col-4 col-lg-2 text-center justify-content-end bg-primary text-white small px-1 py-1">
+        <span id="filter-tab-text">Hide Filters</span>
+        <span id="filter-tab-arrow">&#9650;</span>
+      </div>
     </div>
+<!-- Add this HTML just after the closing </div> of your filters-search element -->
 
+
+<style>
+  .filter-tab {
+    position: absolute;
+    bottom:-17px;
+    right: 0%;
+    transform: translateY(50%);    
+    border-radius: 0 0 5px 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+
+  .filter-tab:hover {
+    background-color: #0056b3;
+  }
+
+  #filters-search.retracted {
+    transform: translateY(-100%);
+    transition: all 0.5s ease;
+  }
+
+  #filters-search {
+    transition: transform 0.5s ease;
+}
+
+
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filtersSearch = document.getElementById('filters-search');
+  const filterTab = document.getElementById('filter-tab');
+  const filterTabText = document.getElementById('filter-tab-text');
+  const filterTabArrow = document.getElementById('filter-tab-arrow');
+
+  filterTab.addEventListener('click', function() {
+    filtersSearch.classList.toggle('retracted');
+    if (filtersSearch.classList.contains('retracted')) {
+      filterTabText.textContent = 'Show Filters';
+      filterTabArrow.innerHTML = '&#9660;'; // Down arrow
+    } else {
+      filterTabText.textContent = 'Hide Filters';
+      filterTabArrow.innerHTML = '&#9650;'; // Up arrow
+    }
+  });
+});
+function checkStickyAndUpdate() {
+    // Get the element to check for stickiness
+    const stickyElement = document.getElementById('filters-search');
+    const filterTabElement = document.getElementById('filter-tab');
+
+    // Ensure both elements are present
+    if (!stickyElement || !filterTabElement) {
+        console.warn('Required elements are not found in the DOM.');
+        return;
+    }
+
+    // Get the bounding rectangle of the sticky element
+    const stickyRect = stickyElement.getBoundingClientRect();
+
+    // Determine if the sticky element is in its sticky state
+    const isSticky = stickyRect.top <= 0;
+
+    // Update the class of the filter tab element based on stickiness
+    if (isSticky) {
+        filterTabElement.classList.remove('d-none');
+    } else {
+        filterTabElement.classList.add('d-none');
+    }
+}
+
+// Attach event listeners
+window.addEventListener('scroll', checkStickyAndUpdate);
+window.addEventListener('load', checkStickyAndUpdate);
+
+</script>
 
     <div id="contents-container" class="pe-5">
       {% for item in items %}
