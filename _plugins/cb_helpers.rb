@@ -140,7 +140,7 @@ module CollectionBuilderHelperGenerator
         theme_icons['icon-multiple'] = "postcard"
       end
       if !theme_icons['icon-default']
-        theme_icons['icon-default'] = "file-earmark"
+        theme_icons['icon-default'] = "soundwave"
       end
       if !theme_icons['icon-back-to-top']
         theme_icons['icon-back-to-top'] = "arrow-up-square"
