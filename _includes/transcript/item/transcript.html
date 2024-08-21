@@ -17,7 +17,7 @@
         </a>{%endfor%}</svg>
     </div>
   </div>
-  {% include visualization-filter-legend.html %}
+  {% include /transcript/style/visualization-filter-legend.html %}
   <div id="filters-content" class="pe-md-5">
     <div class="row my-3 sticky-top bg-white border-bottom border-left border-right d-print-none py-3 w-md-75" id="filters-search" style="z-index: 0;">
       <div class="col {% unless site.data.filters %}d-none{% endunless %}">
@@ -60,8 +60,8 @@
         </select>
       </div>
       <div id="filter-tab" class="d-none filter-tab col-4 col-lg-2 text-center justify-content-end bg-primary text-white small px-1 py-1">
-        <span id="filter-tab-text">Hide Filters</span>
-        <span id="filter-tab-arrow">&#9650;</span>
+        <span id="hide-filters-text">Hide Filters &#9650;</span>
+        <span id="show-filters-text">Show Filters &#9660;</span>
       </div>
     </div>
 
