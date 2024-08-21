@@ -2,7 +2,7 @@
 # generic fallback item page layout
 # displays image or icon depending on "image_thumb"
 layout: item/item-page-base
-custom-foot: transcript/js/transcript-js.html;/transcript/js/docready-js.html;/transcript/js/filters-tab.html
+custom-foot: transcript/js/transcript-js.html
 ---
 {% assign children = site.data[site.metadata] | where_exp: 'item','item.parentid == page.objectid' %}
 {% if page.object-transcript contains ".csv"%}
