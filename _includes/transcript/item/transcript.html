@@ -1,7 +1,6 @@
 <div id="transcript">
   <div class="my-2 row px-3 mt-4">
     <div class="vizdiv w-100">
-      <h2>Transcript</h2>
       <p class="my-2 meta ">Topics:</h4>
       <svg id="colorViz" class="chart" width="100%" height="100px" style="overflow: visible">
         {% for item in items %}
@@ -18,9 +17,10 @@
     </div>
   </div>
   {% include /transcript/style/visualization-filter-legend.html %}
-  <div id="filters-content" class="pe-md-5">
-    <div class="row my-3 sticky-top bg-white border-bottom border-left border-right d-print-none py-3 w-md-75" id="filters-search" style="z-index: 0;">
-      <div class="col {% unless site.data.filters %}d-none{% endunless %}">
+  <div class="pe-md-5">
+    <div id="filters-search" class="row my-3 sticky-top bg-white border-bottom border-left border-right d-print-none py-3 w-md-75" style="z-index: 0;">
+      <div id="filters-container" class="row">
+        <div class="col {% unless site.data.filters %}d-none{% endunless %}">
         <select id="filters" title="Filter by Topic" aria-label="Topic filtering dropdown select option" class="filters py-1 form-select border border-primary" onchange="filterLines(this.value)">
           <option value="all" class="reset" selected="selected reset">Filter by Topic</option>
           {% assign filters = site.data.filters %}
@@ -58,6 +58,7 @@
         <select class="w-100 col-md-8 mb-2 form-select p-2 border border-primary" id="searchResults" onchange="scrollToLine(this.value);">
 
         </select>
+      </div>
       </div>
       <div id="filter-tab" class="d-none filter-tab col-4 col-lg-2 text-center justify-content-end bg-primary text-white small px-1 py-1">
         <span id="hide-filters-text">Hide Filters &#9650;</span>
