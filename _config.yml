@@ -18,12 +18,12 @@ source-code: https://github.com/CollectionBuilder/cb-oralhistory
 # SITE SETTINGS
 #
 # title of site appears in banner
-title: Oral History (as) Data
+title: The Long 1960s - 2024 Fall
 # tagline, a short phrase that will appear throughout the site in the top banner
-tagline: Analyze and publish coded oral history and qualitative interviews
+tagline: "Oral histories collected by Students in Prof. Rebecca Scofield's History 325 Class"
 # description appears in meta tags and other locations
 # this description might appear in search result lists, keep around 160 characters max
-description: "The Oral History as Data (OHD) tool is a static website generator that allows users to analyze and publish coded oral history or qualitative interview files. More information about the project and how to use it be found on [the project website](https://oralhistoryasdata.github.io/about.html)."
+description: "These oral histories, which address everyday life and historical events during the 'long 1960s' were collected by students of Professor Rebeccas Scofield during her Fall 2024 class, History 325. Students used the Oral History as Data framework and the Learn-Static Lesson Plan on the tool to upload and code their transcripts. Support for this project came from the National Endowment for the Humanities."
 # creator of the digital collection, to appear in meta tags; we typically use our GitHub usernames but feel free to just use your name
 author: dcnb
 
@@ -32,7 +32,7 @@ author: dcnb
 #
 # Set the metadata for your collection (the name of the CSV file in your _data directory that describes the objects in your collection) 
 # Use the filename of your CSV **without** the ".csv" extension! E.g. _data/demo-metadata.csv --> "demo-metadata"
-metadata: demo-ohd-metadata 
+metadata: long1960s 
 # page generation settings [optional!]
 # [optional: only used if you need to tweak CB defaults or generate from more than one data file]
 # page_gen:
