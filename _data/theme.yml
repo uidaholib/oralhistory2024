@@ -13,7 +13,7 @@ home-page-visualization: https://ctrl-shift.org/images/gluck.jpg
 home-page-visualization-size: 30%
 # featured image is used in home page banner and in meta markup to represent the collection
 # use either an objectid (from an item in this collect), a relative location of an image in this repo, or a full url to an image elsewhere
-featured-image: gluck
+featured-image: 
 # optional: add extra padding around collection title for a larger image feature. 
 home-title-y-padding: 12em # the margin from the top your title portion will appear.
 # optional: change position of background image, center, top, bottom
